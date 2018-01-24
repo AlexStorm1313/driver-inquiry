@@ -1,0 +1,26 @@
+{
+  "name": "alexstorm13/zeus-chaufer-inquiry",
+  "description": "This is the inquiry package for the chaufer website",
+  "license": "GNU",
+  "authors": [
+    {
+      "name": "Alex Brasser",
+      "email": "alexbrasser@gmail.com"
+    }
+  ],
+  "require": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "Alexstorm13\\ChauferInquiry\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Alexstorm13\\ChauferInquiry\\ChauferInquiryServiceProvider"
+      ]
+    }
+  }
+}
