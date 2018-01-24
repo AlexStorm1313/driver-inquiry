@@ -14,6 +14,6 @@
 /*
  * Zauth Routes
  */
-Route::group(['middleware' => ['auth:api'], 'prefix' => 'inquiry'], function () {
+Route::group(['middleware' => ['auth:api'], 'prefix' => 'chaufer/inquiry'], function () {
 
 });
