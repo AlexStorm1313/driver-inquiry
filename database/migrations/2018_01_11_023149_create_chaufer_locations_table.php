@@ -15,8 +15,9 @@ class CreateChauferLocationsTable extends Migration
     {
         Schema::create('chaufer_locations', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('chaufer_inquiry_id');
             $table->string('location');
-            $table->string('index');
+            $table->integer('index');
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ class ChauferInquiry extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'phone', 'start_point', 'end_point'
+        'name', 'email', 'phone', 'comments'
     ];
 
     /**
@@ -31,7 +31,7 @@ class ChauferInquiry extends Model
             'name' => 'required|string|max:255',
             'email' => 'required|email',
             'phone' => 'sometimes|required|string|max:255',
-            'notes' => 'sometimes|required|string|max:255'
+            'comments' => 'sometimes|required|string|max:255'
         ]);
         return $validator;
     }

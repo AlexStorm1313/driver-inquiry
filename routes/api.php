@@ -12,8 +12,12 @@
 */
 
 /*
- * Zauth Routes
+ * Chaufer Inquiry Routes
  */
 Route::group(['prefix' => 'chaufer/inquiry'], function () {
+    Route::get('get', 'ChauferInquiryController@get')->name('get');
     Route::post('create', 'ChauferInquiryController@create')->name('create');
+    Route::group(['prefix' => '{id}'], function () {
+        Route::delete('delete', 'ChauferInquiryController@delete')->name('delete');
+    });
 });

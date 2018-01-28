@@ -13,7 +13,7 @@ class ChauferLocation extends Model
      * @var array
      */
     protected $fillable = [
-        'location', 'index'
+        'chaufer_inquiry_id', 'location', 'index'
     ];
 
     /**
@@ -29,8 +29,13 @@ class ChauferLocation extends Model
     {
         $validator = Validator::make($menu, [
             'location' => 'required|string|max:255',
-            'index' => 'required|string|max:255',
+            'index' => 'required|integer|max:255',
         ]);
         return $validator;
+    }
+
+    public function inquiry()
+    {
+        return $this->belongsTo('Alexstorm13\ChauferInquiry\ChauferInquiry');
     }
 }
