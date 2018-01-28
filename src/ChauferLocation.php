@@ -5,7 +5,7 @@ namespace Alexstorm13\ChauferInquiry;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 
-class ChauferInquiryLocation extends Model
+class ChauferLocation extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,7 +13,7 @@ class ChauferInquiryLocation extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'index'
+        'location', 'index'
     ];
 
     /**
@@ -28,7 +28,8 @@ class ChauferInquiryLocation extends Model
     public static function validate($menu)
     {
         $validator = Validator::make($menu, [
-
+            'location' => 'required|string|max:255',
+            'index' => 'required|string|max:255',
         ]);
         return $validator;
     }

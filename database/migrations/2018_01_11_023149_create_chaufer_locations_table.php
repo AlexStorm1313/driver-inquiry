@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChauferInquiryLocationsTable extends Migration
+class CreateChauferLocationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateChauferInquiryLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('chaufer_inquiry_locations', function (Blueprint $table) {
+        Schema::create('chaufer_locations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('location');
             $table->string('index');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateChauferInquiryLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chaufer_inquiry_locations');
+        Schema::dropIfExists('chaufer_locations');
     }
 }

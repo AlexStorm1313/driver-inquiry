@@ -18,8 +18,7 @@ class CreateChauferInquiriesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->string('start_point');
-            $table->string('end_point');
+            $table->string('notes');
             $table->timestamps();
         });
     }

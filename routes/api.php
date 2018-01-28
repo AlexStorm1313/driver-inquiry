@@ -14,6 +14,6 @@
 /*
  * Zauth Routes
  */
-Route::group(['middleware' => ['auth:api'], 'prefix' => 'chaufer/inquiry'], function () {
-
+Route::group(['prefix' => 'chaufer/inquiry'], function () {
+    Route::post('create', 'ChauferInquiryController@create')->name('create');
 });

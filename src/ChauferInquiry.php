@@ -29,16 +29,15 @@ class ChauferInquiry extends Model
     {
         $validator = Validator::make($menu, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
-            'start_point' => 'required|string|max:255',
-            'end_point' => 'required|string|max:255'
+            'email' => 'required|email',
+            'phone' => 'sometimes|required|string|max:255',
+            'notes' => 'sometimes|required|string|max:255'
         ]);
         return $validator;
     }
 
     public function locations()
     {
-        return $this->hasMany('Alexstorm13\ChauferInquiry\ChauferInquiryLocation');
+        return $this->hasMany('Alexstorm13\ChauferInquiry\ChauferLocation');
     }
 }
