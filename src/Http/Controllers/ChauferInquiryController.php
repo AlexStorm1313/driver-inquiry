@@ -4,8 +4,10 @@ namespace Alexstorm13\ChauferInquiry\Http\Controllers;
 
 use Alexstorm13\ChauferInquiry\ChauferInquiry;
 use Alexstorm13\ChauferInquiry\ChauferLocation;
+use Alexstorm13\ChauferInquiry\Mail\NewChauferInquiry;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ChauferInquiryController extends Controller
 {
@@ -32,6 +34,7 @@ class ChauferInquiryController extends Controller
             $inquiry = ChauferInquiry::create($request->inquiry);
             $inquiry->locations()->createMany($request->inquiry['locations']);
             $inquiry = ChauferInquiry::with('locations')->findOrFail($inquiry->id);
+            Mail::to($request->inquiry['email'])->send(new NewChauferInquiry($inquiry));
             return response()->json($inquiry);
         }
     }

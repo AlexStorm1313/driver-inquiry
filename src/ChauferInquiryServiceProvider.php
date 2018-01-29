@@ -20,6 +20,7 @@ class ChauferInquiryServiceProvider extends ServiceProvider
         $routeServiceProvider = new RouteServiceProvider(ServiceProvider::class);
         $routeServiceProvider->map();
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'ChauferInquiry');
     }
 
     /**

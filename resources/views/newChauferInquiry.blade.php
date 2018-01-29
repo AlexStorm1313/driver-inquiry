@@ -1,0 +1,2 @@
+{{ $inquiry }}
+{{ $inquiry->email }}
