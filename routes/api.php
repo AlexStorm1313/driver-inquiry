@@ -14,10 +14,12 @@
 /*
  * Chaufer Inquiry Routes
  */
-Route::group(['prefix' => 'chaufer/inquiry'], function () {
+Route::group(['middleware' => ['auth:api'], 'prefix' => 'chaufer-inquiry'], function () {
     Route::get('get', 'ChauferInquiryController@get')->name('get');
-    Route::post('create', 'ChauferInquiryController@create')->name('create');
     Route::group(['prefix' => '{id}'], function () {
         Route::delete('delete', 'ChauferInquiryController@delete')->name('delete');
+    });
+    Route::group(['middleware' => ['client'], 'prefix' => 'chaufer-inquiry'], function () {
+        Route::post('create', 'ChauferInquiryController@create')->name('create');
     });
 });
