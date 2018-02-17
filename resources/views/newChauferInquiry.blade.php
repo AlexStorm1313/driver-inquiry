@@ -1,2 +1,10 @@
-{{ $inquiry }}
-{{ $inquiry->email }}
+Name: {{ $inquiry->name }} <br>
+Email: {{ $inquiry->email }} <br>
+Phone: {{ $inquiry->phone }} <br>
+<br>
+Date: {{ $inquiry->date_time }} <br>
+Comments: {{ $inquiry->comments }} <br>
+Locations: <br>
+@foreach($inquiry->locations as $location)
+    {{ $location->index }} {{ $location->location}} <br>
+@endforeach

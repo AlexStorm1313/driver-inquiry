@@ -26,6 +26,7 @@ class NewChauferInquiry extends Mailable
     public function __construct(ChauferInquiry $inquiry)
     {
         $this->inquiry = $inquiry;
+        $inquiry->locations = array_sort($inquiry->locations, 'index');
     }
 
     /**
