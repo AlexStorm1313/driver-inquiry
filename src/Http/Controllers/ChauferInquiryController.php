@@ -34,7 +34,7 @@ class ChauferInquiryController extends Controller
             $inquiry = ChauferInquiry::create($request->inquiry);
             $inquiry->locations()->createMany($request->inquiry['locations']);
             $inquiry = ChauferInquiry::with('locations')->findOrFail($inquiry->id);
-            Mail::to($request->inquiry['email'])->send(new NewChauferInquiry($inquiry));
+            Mail::to(env("MAIL_TO_ADDRESS"))->send(new NewChauferInquiry($inquiry));
             return response()->json($inquiry);
         }
     }
