@@ -13,7 +13,7 @@ class ChauferInquiry extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'phone', 'date_time', 'private_car' 'comments'
+        'name', 'email', 'phone', 'date_time', 'private_car', 'comments'
     ];
 
     /**
