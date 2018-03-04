@@ -32,6 +32,7 @@ class ChauferInquiry extends Model
             'email' => 'required|email',
             'phone' => 'sometimes|required|string|max:255',
             'date_time' => 'required|date|max:255',
+            'private_car' => 'required|boolean|max:1',
             'comments' => 'sometimes|required|string|max:255'
         ]);
         return $validator;

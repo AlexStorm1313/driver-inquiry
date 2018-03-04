@@ -19,6 +19,7 @@ class CreateChauferInquiriesTable extends Migration
             $table->string('email');
             $table->string('phone')->nullable();
             $table->dateTime('date_time');
+            $table->boolean('private_car');
             $table->string('comments')->nullable();
             $table->timestamps();
         });
